@@ -1,0 +1,209 @@
+body {
+    position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-image: linear-gradient(135deg, #353437 0%, #4F4e52 100%);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    text-align: center;
+}
+
+.container-fluid {
+    padding: 15px 90px;
+}
+
+#tambahbuku, #cariBuku, #incomplete, #complete {
+    width: 90%;
+    margin: 0 auto;
+    background-image: linear-gradient(135deg, #5b706f 0%, #4e9690 100%);
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+#tambahbuku {
+    padding-bottom: 35px;
+}
+
+#cariBuku {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#incomplete, #complete {
+    padding-bottom: 5px;
+}
+
+#complete {
+    margin-top: 20px;
+}
+
+#bookForm div {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-label {
+    color: #f3f3f3;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 60%;
+}
+
+.form-control {
+    height: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    width: 60%;
+    padding: 0 10px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #4e9690;
+    box-shadow: 0 0 8px rgba(78, 150, 144, 0.3);
+    outline: none;
+}
+
+#bookFormSubmit {
+    background-color: #4e9690;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 60%;
+    font-weight: 600;
+}
+
+#bookFormSubmit:hover {
+    background-color: #3e7d7b;
+}
+
+#appname {
+    margin-bottom: 40px;
+}
+
+.appname {
+    font-weight: 1000;
+    font-size: 64px;
+    color: white;
+}
+
+#appname img {
+    margin: 0 auto;
+    max-width: 150px;
+}
+
+button, .hapus {
+    margin-top: 7px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+button {
+    margin-left: 5px;
+    margin-right: 5px;
+    background: linear-gradient(135deg, #6b8cff, #4a63d3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #4a63d3, #3a4caa);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.hapus {
+    background: linear-gradient(135deg, #ff6b6b, #d84343);
+}
+
+.hapus:hover {
+    background: linear-gradient(135deg, #d84343, #b73232);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.title {
+    color: white;
+    font-weight: 1000;
+    font-size: 32px;
+}
+
+#incompleteBookList, #completeBookList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-color: rgba(255, 255, 255, 0.25);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+[data-testid="bookItem"] {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+#searchBook, #complete {
+    margin-bottom: 20px;
+}
+
+#incompleteBookList > div, #completeBookList > div {
+    margin-bottom: 40px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.footer {
+    color: white;
+    margin-top: 20px;
+    background-color: #202122;
+    padding-bottom: 5px;
+    border-radius: 15px;
+}
+
+footer a {
+    color: rgb(211, 211, 211);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3366cc;
+}
+
+.form-label {
+    color: white;
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 960px) {
+    main {
+        padding: 0px;
+        overflow: auto;
+    }
+    .appname {
+        font-size: 100%;
+    }
+}

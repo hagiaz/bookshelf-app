@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+
+    <!-- Impor script kamu di sini -->
+    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+    <script defer src="main.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="appname">
+      <div class="container" style="margin-top: 60px;">
+          <div class="row text-center mb-1">
+              <h2 class="appname">Bookshelf Web App</h2>
+          </div>
+      </div>
+  </section>
+
+    <main>
+      <section id="tambahbuku">
+        <h2 class="title">Tambah Buku Baru</h2>
+        <form id="bookForm" data-testid="bookForm">
+          <div>
+            <label class="form-label" for="bookFormTitle">Judul</label>
+            <input class="form-control" id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+          </div>
+          <div>
+            <label class="form-label" for="bookFormAuthor">Penulis</label>
+            <input class="form-control" id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+          </div>
+          <div>
+            <label class="form-label" for="bookFormYear">Tahun</label>
+            <input class="form-control" id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+          </div>
+          <div>
+            <label class="form-label" for="bookFormIsComplete">Selesai dibaca?</label>
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+            />
+          </div>
+          <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+            Submit Buku
+          </button>
+        </form>
+      </section>
+
+      <section id="cariBuku">
+        <div class="container">
+          <div class="row text-center mb-1">
+              <h3 class="title">Cari Buku</h3>
+          </div>
+        </div>
+
+        <form id="searchBook" data-testid="searchBookForm">
+          <label for="searchBookTitle" class="form-label">Judul</label>
+          <input id="searchBookTitle" class="form-control" type="text" data-testid="searchBookFormTitleInput" />
+          <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
+            Cari
+          </button>
+        </form>
+      </section>
+
+      <section id="tables">
+        <section id="incomplete">
+          <div class="container">
+            <div class="row text-center mb-1">
+                <h3 class="title">Belum Selesai Dibaca</h3>
+            </div>
+          </div>
+
+          <div id="incompleteBookList" data-testid="incompleteBookList">
+          </div>
+        </section>
+
+        <section id="complete">
+          <div class="container">
+            <div class="row text-center mb-1">
+                <h3 class="title">Selesai Dibaca</h3>
+            </div>
+          </div>
+
+          <div id="completeBookList" data-testid="completeBookList">
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <br><br>
+      <p>&copy; 2024 Hagi Azzam Azzikri</p>
+      <p>Update 2024 Project Kelas Belajar Membuat Front-End Web untuk Pemula - Dicoding Academy</p> 
+      <p>
+        <a href=#>Back To Top</a>
+      </p>
+      <br>
+    </footer>
+
+  </body>
+</html>
