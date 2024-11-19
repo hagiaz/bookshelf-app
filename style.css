@@ -131,6 +131,7 @@ button:hover {
 
 .hapus {
     background: linear-gradient(135deg, #ff6b6b, #d84343);
+    margin-bottom: 15px;
 }
 
 .hapus:hover {
@@ -195,7 +196,6 @@ footer a:hover {
 
 .form-label {
     color: white;
-    margin-right: 15px;
 }
 
 @media screen and (max-width: 960px) {
