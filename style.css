@@ -32,6 +32,14 @@ body {
     padding: 20px;
 }
 
+#searchBookTitle {
+    margin-left: 5px;
+}
+
+input {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 #incomplete, #complete {
     padding-bottom: 5px;
 }
