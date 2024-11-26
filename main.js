@@ -30,7 +30,7 @@ function addBook() {
     const id = generateId();
     const title = document.getElementById('bookFormTitle').value;
     const author = document.getElementById('bookFormAuthor').value;
-    const year = document.getElementById('bookFormYear').value;
+    const year = Number(document.getElementById('bookFormYear').value);
     const isComplete = document.getElementById('bookFormIsComplete').checked;
    
     const BookObject = generateBookObject(id, title, author, year, isComplete);
@@ -49,13 +49,13 @@ function generateId() {
     return +new Date();
 }
 
-function generateBookObject(id, title, author, year, isCompleted) {
+function generateBookObject(id, title, author, year, isComplete) {
     return {
         id,
         title,
         author,
         year,
-        isCompleted
+        isComplete
     }
 }
 
@@ -73,7 +73,7 @@ function searchBook() {
 
     for (const bookItem of filteredBooks) {
         const bookElement = makeBook(bookItem);
-        if (!bookItem.isCompleted) {
+        if (!bookItem.isComplete) {
             uncompletedBooks.append(bookElement);
         } else {
             completedBooks.append(bookElement);
@@ -90,7 +90,7 @@ document.addEventListener(RENDER_EVENT, function () {
     
     for (const bookItem of books) {
         const bookElement = makeBook(bookItem);
-        if (!bookItem.isCompleted) {
+        if (!bookItem.isComplete) {
             uncompletedBooks.append(bookElement);
         }
         else{
@@ -122,14 +122,14 @@ function makeBook(bookObject) {
     const buttonContainer = document.createElement('div');
 
     const completeButton = document.createElement('button');
-    if (bookObject.isCompleted) {
+    if (bookObject.isComplete) {
         completeButton.innerText = "Belum Selesai";
     } else {
         completeButton.innerText = "Selesai dibaca";
     }
     completeButton.setAttribute('data-testid', 'bookItemIsCompleteButton');
     completeButton.addEventListener('click', function() {
-        if (bookObject.isCompleted) {
+        if (bookObject.isComplete) {
             undoBookFromCompleted(bookObject.id);
         } else {
             addBookToCompleted(bookObject.id);
@@ -157,7 +157,7 @@ function addBookToCompleted (bookId) {
    
     if (bookTarget == null) return;
    
-    bookTarget.isCompleted = true;
+    bookTarget.isComplete = true;
     document.dispatchEvent(new Event(RENDER_EVENT));
 
     saveData();
@@ -181,7 +181,7 @@ function undoBookFromCompleted(bookId) {
    
     if (bookTarget == null) return;
    
-    bookTarget.isCompleted = false;
+    bookTarget.isComplete = false;
     document.dispatchEvent(new Event(RENDER_EVENT));
 
     saveData();
